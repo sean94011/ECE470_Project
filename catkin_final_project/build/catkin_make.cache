@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/ur3/ECE470_Project/catkin_final_project/devel -DCMAKE_INSTALL_PREFIX=/home/ur3/ECE470_Project/catkin_final_project/install -G Unix Makefiles
