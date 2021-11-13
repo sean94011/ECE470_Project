@@ -1,10 +1,11 @@
 # CMake generated Testfile for 
-# Source directory: /home/ur3/catkin_ckyao2/src
-# Build directory: /home/ur3/catkin_ckyao2/build
+# Source directory: /home/ur3/ECE470_Project/catkin_ckyao2/src
+# Build directory: /home/ur3/ECE470_Project/catkin_ckyao2/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(final_project)
 subdirs(lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_dev)
 subdirs(lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros_pkgs)
 subdirs(lab2andDriver/drivers/camera_calibration/image_pipeline/image_pipeline)

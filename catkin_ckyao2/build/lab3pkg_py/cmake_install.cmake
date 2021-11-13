@@ -1,8 +1,8 @@
-# Install script for directory: /home/ur3/catkin_ckyao2/src/lab3pkg_py
+# Install script for directory: /home/ur3/ECE470_Project/catkin_ckyao2/src/lab3pkg_py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/ur3/catkin_ckyao2/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ur3/ECE470_Project/catkin_ckyao2/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ur3/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_py.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ur3/ECE470_Project/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_py.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab3pkg_py/cmake" TYPE FILE FILES
-    "/home/ur3/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_pyConfig.cmake"
-    "/home/ur3/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_pyConfig-version.cmake"
+    "/home/ur3/ECE470_Project/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_pyConfig.cmake"
+    "/home/ur3/ECE470_Project/catkin_ckyao2/build/lab3pkg_py/catkin_generated/installspace/lab3pkg_pyConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab3pkg_py" TYPE FILE FILES "/home/ur3/catkin_ckyao2/src/lab3pkg_py/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab3pkg_py" TYPE FILE FILES "/home/ur3/ECE470_Project/catkin_ckyao2/src/lab3pkg_py/package.xml")
 endif()
 

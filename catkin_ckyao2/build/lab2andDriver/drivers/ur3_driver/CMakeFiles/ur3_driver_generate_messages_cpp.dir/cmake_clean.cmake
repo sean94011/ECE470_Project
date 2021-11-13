@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ur3_driver_generate_messages_cpp"
-  "/home/ur3/catkin_ckyao2/devel/include/ur3_driver/gripper_input.h"
-  "/home/ur3/catkin_ckyao2/devel/include/ur3_driver/position.h"
-  "/home/ur3/catkin_ckyao2/devel/include/ur3_driver/command.h"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/devel/include/ur3_driver/position.h"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/devel/include/ur3_driver/gripper_input.h"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/devel/include/ur3_driver/command.h"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -67,14 +67,14 @@ set(ur3_e_moveit_config_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ur3_e_moveit_config_SOURCE_PREFIX /home/ur3/catkin_ckyao2/src/lab2andDriver/drivers/universal_robot/ur3_e_moveit_config)
-  set(ur3_e_moveit_config_DEVEL_PREFIX /home/ur3/catkin_ckyao2/devel)
+  set(ur3_e_moveit_config_SOURCE_PREFIX /home/ur3/ECE470_Project/catkin_ckyao2/src/lab2andDriver/drivers/universal_robot/ur3_e_moveit_config)
+  set(ur3_e_moveit_config_DEVEL_PREFIX /home/ur3/ECE470_Project/catkin_ckyao2/devel)
   set(ur3_e_moveit_config_INSTALL_PREFIX "")
   set(ur3_e_moveit_config_PREFIX ${ur3_e_moveit_config_DEVEL_PREFIX})
 else()
   set(ur3_e_moveit_config_SOURCE_PREFIX "")
   set(ur3_e_moveit_config_DEVEL_PREFIX "")
-  set(ur3_e_moveit_config_INSTALL_PREFIX /home/ur3/catkin_ckyao2/install)
+  set(ur3_e_moveit_config_INSTALL_PREFIX /home/ur3/ECE470_Project/catkin_ckyao2/install)
   set(ur3_e_moveit_config_PREFIX ${ur3_e_moveit_config_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ur3/catkin_ckyao2/install/lib;/home/ur3/catkin_ckyao2/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/ur3/ECE470_Project/catkin_ckyao2/install/lib;/home/ur3/ECE470_Project/catkin_ckyao2/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

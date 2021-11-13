@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ur3/catkin_ckyao2/src/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/src/gazebo_ros_api_plugin.cpp" "/home/ur3/catkin_ckyao2/build/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/src/gazebo_ros_api_plugin.cpp.o"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/src/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/src/gazebo_ros_api_plugin.cpp" "/home/ur3/ECE470_Project/catkin_ckyao2/build/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/CMakeFiles/gazebo_ros_api_plugin.dir/src/gazebo_ros_api_plugin.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,16 +17,14 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/ur3/catkin_ckyao2/devel/include"
-  "/home/ur3/catkin_ckyao2/src/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/include"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/devel/include"
+  "/home/ur3/ECE470_Project/catkin_ckyao2/src/lab2andDriver/drivers/gazebo_ros_pkgs/gazebo_ros/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/gazebo-7"
   "/usr/include/sdformat-4.0"
   "/usr/include/ignition/math2"
   "/usr/include/OGRE"
-  "/usr/include/OGRE/Terrain"
-  "/usr/include/OGRE/Paging"
   )
 
 # Targets to which this target links.

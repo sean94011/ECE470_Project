@@ -1,0 +1,8 @@
+prefix=/home/ur3/ECE470_Project/catkin_ckyao2/install
+
+Name: final_project
+Description: Description of final_project
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

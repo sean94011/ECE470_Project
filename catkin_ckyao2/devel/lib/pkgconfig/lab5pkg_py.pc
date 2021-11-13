@@ -1,4 +1,4 @@
-prefix=/home/ur3/catkin_ckyao2/devel
+prefix=/home/ur3/ECE470_Project/catkin_ckyao2/devel
 
 Name: lab5pkg_py
 Description: Description of lab5pkg_py

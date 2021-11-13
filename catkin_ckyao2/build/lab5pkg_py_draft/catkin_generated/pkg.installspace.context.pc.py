@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "lab5pkg_py"
-PROJECT_SPACE_DIR = "/home/ur3/catkin_ckyao2/install"
+PROJECT_SPACE_DIR = "/home/ur3/ECE470_Project/catkin_ckyao2/install"
 PROJECT_VERSION = "0.0.0"
