@@ -31,5 +31,5 @@ cd catkin_final_project/src/projectandDriver/project_py/scripts/
 
 chmod +x project_exec.py
 
-rosrun lab2pkg_py project_exec.py --simulator True
+rosrun final_project fp_exec.py --simulator True
 ```
