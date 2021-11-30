@@ -10,8 +10,14 @@ import numpy as np
 from lab5_header import *
 from lab5_func import *
 from blob_search import *
-from sensor_msgs.msg import CameraInfo, Image
+from tic_tac_toe import *
 
+grid_3x3 = [[0.17, 0.04], [0.17, 0.12], [0.17, 0.20],
+            [0.27, 0.04], [0.27, 0.12], [0.27, 0.20],
+            [0.37, 0.04], [0.37, 0.12], [0.37, 0.20]]
+
+
+# ========================= Student's code starts here =========================
 
 # Position for UR3 not blocking the camera
 go_away = [270*PI/180.0, -90*PI/180.0, 90*PI/180.0, -90*PI/180.0, -90*PI/180.0, 135*PI/180.0]
@@ -25,6 +31,7 @@ xw_yw_Y = []
 xw_yw_G_end = [[0.300, 0.100, 0.035],[0.300, 0.100, 0.067]]
 xw_yw_Y_end = [[0.300, 0.200, 0.031],[0.300, 0.200, 0.062]]
 
+# ========================= Student's code ends here ===========================
 
 ################ Pre-defined parameters and functions no need to change below ################
 
@@ -201,68 +208,29 @@ def move_block(pub_cmd, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel):
     error = 0
    
     rospy.loginfo("Moving to start location ...")
-    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.100,0),4.0,4.0)
-    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.031,0),4.0,4.0)
+    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.100,0),vel,accel)
+    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.031,0),vel,accel)
     rospy.loginfo("Gripping ...")
     gripper(pub_cmd,loop_rate,suction_on)
     time.sleep(2.0)
     if digital_in_0 == False:
         rospy.loginfo("Block Missing; Moving back to home ...")
-        move_arm(pub_cmd,loop_rate,home,4.0,4.0)
+        move_arm(pub_cmd,loop_rate,home,vel,accel)
         rospy.loginfo("Ungripping ...")
         gripper(pub_cmd,loop_rate,suction_off)
         return
     rospy.loginfo("Moving back to home location ...")
-    move_arm(pub_cmd,loop_rate,home,4.0,4.0)
+    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.100,0),vel,accel)
+    move_arm(pub_cmd,loop_rate,home,vel,accel)
     rospy.loginfo("Moving to target location ...")
-    move_arm(pub_cmd,loop_rate,lab_invk(target_xw_yw_zw[0],target_xw_yw_zw[1],0.100,0),4.0,4.0)
-    move_arm(pub_cmd,loop_rate,lab_invk(target_xw_yw_zw[0],target_xw_yw_zw[1],target_xw_yw_zw[2],0),4.0,4.0)
+    #move_arm(pub_cmd,loop_rate,lab_invk(target_xw_yw_zw[0],target_xw_yw_zw[1],0.100,0),vel,accel)
+    move_arm(pub_cmd,loop_rate,lab_invk(target_xw_yw_zw[0],target_xw_yw_zw[1],0.017,0),vel,accel)
     rospy.loginfo("Ungripping")
     gripper(pub_cmd,loop_rate,suction_off)
     rospy.loginfo("Moving back to home location ...")
-    move_arm(pub_cmd,loop_rate,home,4.0,4.0)
+    move_arm(pub_cmd,loop_rate,home,vel,accel)
 
     # ========================= Student's code ends here ===========================
-
-def throw_block(pub_cmd, loop_rate, start_xw_yw_zw, vel, accel):
-
-    """
-    start_xw_yw_zw: where to pick up a block in global coordinates
-    target_xw_yw_zw: where to place the block in global coordinates
-
-    hint: you will use lab_invk(), gripper(), move_arm() functions to
-    pick and place a block
-
-    """
-    # ========================= Student's code starts here =========================
-
-    # global variable1
-    # global variable2
-    error = 0
-   
-    rospy.loginfo("Moving to start location ...")
-    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.100,0),4.0,4.0)
-    move_arm(pub_cmd,loop_rate,lab_invk(start_xw_yw_zw[0],start_xw_yw_zw[1],0.031,0),4.0,4.0)
-    rospy.loginfo("Gripping ...")
-    gripper(pub_cmd,loop_rate,suction_on)
-    time.sleep(2.0)
-    if digital_in_0 == False:
-        rospy.loginfo("Block Missing; Moving back to home ...")
-        move_arm(pub_cmd,loop_rate,home,4.0,4.0)
-        rospy.loginfo("Ungripping ...")
-        gripper(pub_cmd,loop_rate,suction_off)
-        return
-    rospy.loginfo("Moving back to home location ...")
-    move_arm(pub_cmd,loop_rate,home,4.0,4.0)
-    rospy.loginfo("Preparing to throw ...")
-    move_arm(pub_cmd,loop_rate, np.radians([180,0, 0,-90,-90,90]) ,4,4)
-    move_arm(pub_cmd,loop_rate, np.radians([180,-45, 0,-90,-90,90]) ,4,100)
-   # rospy.loginfo("Ungripping")
-    gripper(pub_cmd,loop_rate,suction_off)
-    move_arm(pub_cmd,loop_rate, np.radians([180,-90, 0,0,-90,90]) ,4,100)
-    rospy.loginfo("Moving back to home location ...")
-    move_arm(pub_cmd,loop_rate,home,4.0,4.0)
-
 
     return error
 
@@ -306,7 +274,7 @@ class ImageConverter:
         # the image frame to the global world frame.
 
         xw_yw_G = blob_search(cv_image, "green")
-        #xw_yw_Y = blob_search(cv_image, "purple")
+        xw_yw_Y = blob_search(cv_image, "yellow")
 
 
 """
@@ -319,6 +287,7 @@ def main():
     global xw_yw_G
     global xw_yw_G_end
     global xw_yw_Y_end
+    global grid_3x3
 
     # Initialize ROS node
     rospy.init_node('lab5node')
@@ -338,13 +307,20 @@ def main():
     # Initialize the rate to publish to ur3/command
     loop_rate = rospy.Rate(SPIN_RATE)
 
-    vel = 4.0
-    accel = 4.0
+    vel = 2.0
+    accel = 2.0
     move_arm(pub_command, loop_rate, go_away, vel, accel)
 
     ic = ImageConverter(SPIN_RATE)
     time.sleep(5)
+    start_xw_yw_Y = deepcopy(xw_yw_Y)
+    while len(start_xw_yw_Y) is not 5:
+        time.sleep(1)
+        start_xw_yw_Y = deepcopy(xw_yw_Y)
     start_xw_yw_G = deepcopy(xw_yw_G)
+    while len(start_xw_yw_G) is not 5:
+        time.sleep(1)
+        start_xw_yw_G = deepcopy(xw_yw_G)
     
 
     # ========================= Student's code starts here =========================
@@ -353,18 +329,66 @@ def main():
     Hints: use the found xw_yw_G, xw_yw_Y to move the blocks correspondingly. You will
     need to call move_block(pub_command, loop_rate, start_xw_yw_zw, target_xw_yw_zw, vel, accel)
     """
-    
-    """for i in range(len(start_xw_yw_Y)):
-       move_block(pub_command, loop_rate, start_xw_yw_Y[i],xw_yw_Y_end[i],vel,accel)"""
-    throw_block(pub_command, loop_rate, start_xw_yw_G[0],vel,accel)
-    
+
+    print('Welcome to RoboTic Tac Toe!')
+    board = board = [' ' for x in range(10)]
+    g = 0
+    y = 0
+    while not(isBoardFull(board)):
+        g_inside, y_inside = update_board(start_xw_yw_G, start_xw_yw_Y, board, pub_command, loop_rate, go_away, vel, accel)
+        if not(isWinner(board, 'O')):
+            p_move = playerMove(board)
+            move_block(pub_command, loop_rate, start_xw_yw_G[g],grid_3x3[p_move-1],vel,accel)
+        else:
+            print('Sorry, O\'s won this time!')
+            break
+
+        g_inside, y_inside = update_board(start_xw_yw_G, start_xw_yw_Y, board, pub_command, loop_rate, go_away, vel, accel)
+        if not(isWinner(board, 'X')):
+            move = compMove(board)
+            if move == 0:
+                print('Tie Game!')
+            else:
+                move_block(pub_command, loop_rate, start_xw_yw_Y[y], grid_3x3[move-1],vel,accel)
+                print('Computer placed an \'O\' in position', move , ':')
+        else:
+            print('X\'s won this time! Good Job!')
+            break
+        g = g+1
+        y = y+1
+    if isBoardFull(board):
+        print('Tie Game!')
 
     # ========================= Student's code ends here ===========================
-
-    move_arm(pub_command, loop_rate, home, vel, accel)
-    rospy.loginfo("Task Completed!")
+    move_arm(pub_command, loop_rate, go_away, vel, accel)
+    rospy.loginfo("Game Finished. See you next time!")
     print("Use Ctrl+C to exit program")
     rospy.spin()
+    """
+while True:
+    answer = input('Do you want to play again? (Y/N)')
+    if answer.lower() == 'y' or answer.lower == 'yes':
+        board = [' ' for x in range(10)]
+        print('-----------------------------------')
+        main()
+    else:
+        break
+"""
+
+def update_board(start_xw_yw_G, start_xw_yw_Y, board, pub_command, loop_rate, go_away, vel, accel):
+    move_arm(pub_command, loop_rate, go_away, vel, accel)
+    time.sleep(1)
+    start_xw_yw_Y = deepcopy(xw_yw_Y)
+    while len(start_xw_yw_Y) is not 5:
+        time.sleep(1)
+        start_xw_yw_Y = deepcopy(xw_yw_Y)
+    time.sleep(1)
+    start_xw_yw_G = deepcopy(xw_yw_G)
+    while len(start_xw_yw_G) is not 5:
+        time.sleep(1)
+        start_xw_yw_G = deepcopy(xw_yw_G)
+    g_inside, y_inside = check_current_board(start_xw_yw_G, start_xw_yw_Y, board)
+    return g_inside, y_inside
 
 if __name__ == '__main__':
 

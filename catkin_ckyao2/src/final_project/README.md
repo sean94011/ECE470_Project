@@ -6,4 +6,4 @@
 
 ### Terminal 2  
 #### $ source devel/setup.bash  
-#### $ rosrun final_project fp_exec.py
+#### $ rosrun final_project fp_exec.py --simulator True

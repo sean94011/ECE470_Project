@@ -67,11 +67,11 @@ def blob_search(image_raw, color):
     # ========================= Student's code starts here =========================
 
     if color is "green":
-        lower = (50,50,50)
-        upper = (70,250,250)   # green upper
+        lower = (60,40,40)
+        upper = (80,255,255)   # green upper
     if color is "purple":
-        lower = (125,20,20)
-        upper = (145,250,250)   # purple upper
+        lower = (20,10,10)
+        upper = (40,255,255)   # purple upper
     """
     else:
         lower = (5,50,50)

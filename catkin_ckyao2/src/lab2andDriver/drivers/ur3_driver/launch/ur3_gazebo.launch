@@ -32,7 +32,59 @@
   <!-- load other controllers -->
   <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load joint_group_position_controller" />
 
-  <node name="spawn_block" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block -x 0.29 -y 0.105"/>
+  <node name="spawn_block_green_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block_green_1 -x 0.12 -y -0.15"/>
+  <node name="spawn_block_green_2" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block_green_2 -x 0.17 -y -0.15"/>
+  <node name="spawn_block_green_3" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block_green_3 -x 0.22 -y -0.15"/>
+  <node name="spawn_block_green_4" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block_green_4 -x 0.27 -y -0.15"/>
+  <node name="spawn_block_green_5" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_green.urdf -urdf -model block_green_5 -x 0.32 -y -0.15"/>
+
+  <node name="spawn_block_yellow_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_yellow.urdf -urdf -model block_yellow_1 -x 0.12 -y -0.10"/>
+  <node name="spawn_block_yellow_2" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_yellow.urdf -urdf -model block_yellow_2 -x 0.17 -y -0.10"/>
+  <node name="spawn_block_yellow_3" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_yellow.urdf -urdf -model block_yellow_3 -x 0.22 -y -0.10"/>
+  <node name="spawn_block_yellow_4" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_yellow.urdf -urdf -model block_yellow_4 -x 0.27 -y -0.10"/>
+  <node name="spawn_block_yellow_5" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block_yellow.urdf -urdf -model block_yellow_5 -x 0.32 -y -0.10"/>
+<!--
+  <node name="spawn_block_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_1 -x 0.18 -y 0.0"/>
+  <node name="spawn_block_2" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_2 -x 0.22 -y 0.0"/>
+  <node name="spawn_block_3" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_3 -x 0.26 -y 0.0"/>
+  <node name="spawn_block_4" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_4 -x 0.30 -y 0.0"/>
+  <node name="spawn_block_5" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_5 -x 0.34 -y 0.0"/>
+  <node name="spawn_block_6" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_6 -x 0.38 -y 0.0"/>
+  <node name="spawn_block_7" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_7 -x 0.42 -y 0.0"/>
+  <node name="spawn_block_8" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_8 -x 0.18 -y 0.04"/>
+  <node name="spawn_block_9" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_9 -x 0.26 -y 0.04"/>
+  <node name="spawn_block_10" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_10 -x 0.34 -y 0.04"/>
+  <node name="spawn_block_11" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_11 -x 0.42 -y 0.04"/>
+  <node name="spawn_block_12" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_12 -x 0.18 -y 0.08"/>
+  <node name="spawn_block_13" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_13 -x 0.22 -y 0.08"/>
+  <node name="spawn_block_14" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_14 -x 0.26 -y 0.08"/>
+  <node name="spawn_block_15" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_15 -x 0.30 -y 0.08"/>
+  <node name="spawn_block_16" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_16 -x 0.34 -y 0.08"/>
+  <node name="spawn_block_17" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_17 -x 0.38 -y 0.08"/>
+  <node name="spawn_block_18" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_18 -x 0.42 -y 0.08"/>
+  <node name="spawn_block_19" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_19 -x 0.18 -y 0.12"/>
+  <node name="spawn_block_20" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_20 -x 0.22 -y 0.12"/>
+  <node name="spawn_block_21" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_21 -x 0.26 -y 0.12"/>
+  <node name="spawn_block_22" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_22 -x 0.30 -y 0.12"/>
+  <node name="spawn_block_23" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_23 -x 0.34 -y 0.12"/>
+  <node name="spawn_block_24" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_24 -x 0.38 -y 0.12"/>
+  <node name="spawn_block_25" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_25 -x 0.42 -y 0.12"/>
+  <node name="spawn_block_26" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_26 -x 0.18 -y 0.16"/>
+  <node name="spawn_block_27" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_27 -x 0.26 -y 0.16"/>
+  <node name="spawn_block_28" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_28 -x 0.34 -y 0.16"/>
+  <node name="spawn_block_29" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_29 -x 0.42 -y 0.16"/>
+  <node name="spawn_block_30" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_30 -x 0.18 -y 0.20"/>
+  <node name="spawn_block_31" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_31 -x 0.22 -y 0.20"/>
+  <node name="spawn_block_32" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_32 -x 0.26 -y 0.20"/>
+  <node name="spawn_block_33" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_33 -x 0.30 -y 0.20"/>
+  <node name="spawn_block_34" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_34 -x 0.34 -y 0.20"/>
+  <node name="spawn_block_35" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_35 -x 0.38 -y 0.20"/>
+  <node name="spawn_block_36" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_36 -x 0.42 -y 0.20"/>
+  <node name="spawn_block_37" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_37 -x 0.18 -y 0.24"/>
+  <node name="spawn_block_38" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_38 -x 0.26 -y 0.24"/>
+  <node name="spawn_block_39" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_39 -x 0.34 -y 0.24"/>
+  <node name="spawn_block_40" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/block.urdf -urdf -model block_40 -x 0.42 -y 0.24"/>
+-->
 
   <node name="spawn_camera" pkg="gazebo_ros" type="spawn_model" args="-file $(find ur_description)/urdf/camera.urdf -urdf -model camera -x 0.29 -y 0.105 -z 0.92" />
 

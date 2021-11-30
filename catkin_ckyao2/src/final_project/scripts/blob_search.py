@@ -8,7 +8,7 @@ import math
 # ========================= Student's code starts here =========================
 
 # Params for camera calibration
-theta = -0.016
+theta = -0.016 #0.85681/180*np.pi
 beta = 743.8
 tx = 0.29
 ty = 0.105
@@ -16,8 +16,6 @@ ty = 0.105
 # Function that converts image coord to world coord
 # Note: input x corresponds to columns in the image, input y is rows in the image
 def IMG2W(x,y):
-    beta = 743.8
-    theta = -0.016
     R = rot_mat(theta).T
     x_c = (y-240)/beta
     y_c = (x-320)/beta
@@ -42,7 +40,7 @@ def blob_search(image_raw, color):
 
     # Filter by Area.
     params.filterByArea = True
-    params.minArea = 400
+    params.minArea = 200
     params.maxArea = 800
 
     # Filter by Circularity
@@ -67,11 +65,11 @@ def blob_search(image_raw, color):
     # ========================= Student's code starts here =========================
 
     if color is "green":
-        lower = (60,50,50)
+        lower = (60,40,40)
         upper = (80,255,255)   # green upper
-    """if color is "purple":
-        lower = (125,20,20)
-        upper = (145,250,250)   # purple upper"""
+    if color is "yellow":
+        lower = (20,10,10)
+        upper = (40,255,255)   # yellow upper
     """
     else:
         lower = (5,50,50)
