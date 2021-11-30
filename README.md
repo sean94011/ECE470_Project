@@ -1,6 +1,6 @@
-﻿# ECE470_Project (The Ping-Pong Catcher)
+﻿# ECE470_Project (RoboTic-Tac-Toe)
  
-In this project, we are going to build a ping-pong catcher with UR3. We will incorporate some machine learning and inverse kinematics to achieve our goals. More specific details will be updated later here.
+In this project, we are going to build a robotic tic-tac-toe player with AI that can play against human player by considering all the posibilities.
 
 ## Installation & Setup
 ```sh
